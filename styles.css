@@ -114,3 +114,10 @@ nav ul li a {
 .map {
     margin-top: 20px;
 }
+
+/* Watermark Background */
+body {
+    background: url('logo.png') no-repeat center center fixed;
+    background-size: 50%;
+    opacity: 0.1; /* Make it blurry */
+}
