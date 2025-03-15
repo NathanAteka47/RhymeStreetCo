@@ -23,3 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
     });
 });
+
+let cart = [];
+
+function addToCart(item, price) {
+    cart.push({ item, price });
+    updateCart();
+}
+
+function updateCart() {
+    let cartDiv = document.getElementById("cart");
+    cartDiv.innerHTML = "<h3>Shopping Cart</h3>";
+    cart.forEach((product, index) => {
+        cartDiv.innerHTML += `<p>${product.item} - KSh ${product.price} 
+        <button onclick="removeFromCart(${index})">Remove</button></p>`;
+    });
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
