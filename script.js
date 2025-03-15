@@ -1,50 +1,60 @@
 // Function to navigate to the artists page
 function exploreArtists() {
-    window.location.href = "artists.html";
+  window.location.href = "artists.html";
 }
 
 // Contact Form Validation
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".contact-form");
-    
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent page reload
+  const form = document.querySelector(".contact-form");
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page reload
 
-        if (name === "" || email === "" || message === "") {
-            alert("Please fill in all fields.");
-            return;
-        }
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-        alert("Message sent successfully! We will get back to you soon.");
-        form.reset();
-    });
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    alert("Message sent successfully! We will get back to you soon.");
+    form.reset();
+  });
 });
 
 let cart = [];
 
 function addToCart(item, price) {
-    cart.push({ item, price });
-    updateCart();
+  cart.push({ item, price });
+  updateCart();
 }
 
 function updateCart() {
-    let cartDiv = document.getElementById("cart");
-    cartDiv.innerHTML = "<h3>Shopping Cart</h3>";
-    cart.forEach((product, index) => {
-        cartDiv.innerHTML += `<p>${product.item} - KSh ${product.price} 
+  let cartDiv = document.getElementById("cart");
+  cartDiv.innerHTML = "<h3>Shopping Cart</h3>";
+  cart.forEach((product, index) => {
+    cartDiv.innerHTML += `<p>${product.item} - KSh ${product.price} 
         <button onclick="removeFromCart(${index})">Remove</button></p>`;
-    });
+  });
 }
 
 function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
+  cart.splice(index, 1);
+  updateCart();
 }
 
 function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("dark-mode");
 }
+document.addEventListener("DOMContentLoaded", function () {
+  let someElement = document.getElementById("yourElementId"); // Replace with actual element ID
+  if (someElement) {
+    someElement.addEventListener("click", function () {
+      console.log("Element clicked!");
+    });
+  } else {
+    console.error("Element not found!");
+  }
+});
