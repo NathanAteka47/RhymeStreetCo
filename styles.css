@@ -117,7 +117,7 @@ nav ul li a {
 
 /* Watermark Background */
 body {
-    background: url('logo.png') no-repeat center center fixed;
+    background: url('./resources/logo.jpg.jpg') no-repeat center center fixed;
     background-size: 50%;
     opacity: 0.1; /* Make it blurry */
 }
