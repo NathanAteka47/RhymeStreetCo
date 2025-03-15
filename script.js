@@ -44,3 +44,7 @@ function removeFromCart(index) {
     cart.splice(index, 1);
     updateCart();
 }
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
